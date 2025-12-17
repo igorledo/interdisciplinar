@@ -2,20 +2,34 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Pilha</title>
+  <title>Pilha e Fila</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h2>Pilha</h2>
+  <h1>Estruturas de Dados</h1>
 
-  <input type="text" id="valor" placeholder="Digite um valor">
-  <br><br>
+  <div class="container">
 
-  <button onclick="adicionar()">Adicionar</button>
-  <button onclick="remover()">Remover</button>
+    <!-- PILHA -->
+    <div class="box">
+      <h2>Pilha</h2>
+      <input id="valorPilha" type="text" placeholder="Valor">
+      <button onclick="pushPilha()">Empilhar</button>
+      <button onclick="popPilha()">Desempilhar</button>
+      <div id="pilha" class="estrutura"></div>
+    </div>
 
-  <div id="pilha"></div>
+    <!-- FILA -->
+    <div class="box">
+      <h2>Fila</h2>
+      <input id="valorFila" type="text" placeholder="Valor">
+      <button onclick="enqueueFila()">Adicionar</button>
+      <button onclick="dequeueFila()">Remover</button>
+      <div id="fila" class="estrutura"></div>
+    </div>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
