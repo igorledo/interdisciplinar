@@ -1,54 +1,107 @@
+// ===== PILHA =====
 let pilha = [];
-let fila = [];
+let maxPilha = 0;
 
-// PILHA
-function atualizarPilha() {
-  const div = document.getElementById("pilha");
-  div.innerHTML = "";
-  pilha.forEach(item => {
-    const el = document.createElement("div");
-    el.className = "item";
-    el.innerText = item;
-    div.appendChild(el);
-  });
+function mostrarCodigo(id, texto) {
+  document.getElementById(id).innerText = texto;
 }
 
-function pushPilha() {
-  const valor = document.getElementById("valorPilha").value;
-  if (valor !== "") {
-    pilha.push(valor);
-    document.getElementById("valorPilha").value = "";
-    atualizarPilha();
+function criarPilha() {
+  maxPilha = Number(document.getElementById('tamPilha').value);
+  pilha = [];
+  document.getElementById('visPilha').innerText = '';
+  document.getElementById('msgPilha').innerText = 'Pilha criada com tamanho ' + maxPilha;
+  mostrarCodigo('codePilha', `maxPilha = ${maxPilha};\npilha = [];`);
+}
+
+function push() {
+  if (pilha.length >= maxPilha) {
+    document.getElementById('msgPilha').innerText = 'Pilha cheia';
+    mostrarCodigo('codePilha', 'if (pilha.length >= maxPilha)');
+    return;
   }
+  const valor = document.getElementById('valPilha').value;
+  if (!valor) return;
+  pilha.push(valor);
+  atualizarPilha();
+  mostrarCodigo('codePilha', 'pilha.push(valor);');
 }
 
-function popPilha() {
+function pop() {
+  if (pilha.length === 0) {
+    document.getElementById('msgPilha').innerText = 'Pilha vazia';
+    mostrarCodigo('codePilha', 'if (pilha.length === 0)');
+    return;
+  }
   pilha.pop();
   atualizarPilha();
+  mostrarCodigo('codePilha', 'pilha.pop();');
 }
 
-// FILA
-function atualizarFila() {
-  const div = document.getElementById("fila");
-  div.innerHTML = "";
-  fila.forEach(item => {
-    const el = document.createElement("div");
-    el.className = "item";
-    el.innerText = item;
-    div.appendChild(el);
-  });
+function exibirPilha() {
+  document.getElementById('msgPilha').innerText = 'Pilha: [ ' + pilha.join(', ') + ' ]';
+  mostrarCodigo('codePilha', 'console.log(pilha);');
 }
 
-function enqueueFila() {
-  const valor = document.getElementById("valorFila").value;
-  if (valor !== "") {
-    fila.push(valor);
-    document.getElementById("valorFila").value = "";
-    atualizarFila();
+function resetPilha() {
+  pilha = [];
+  atualizarPilha();
+  document.getElementById('msgPilha').innerText = 'Pilha reiniciada';
+  mostrarCodigo('codePilha', 'pilha = [];');
+}
+
+function atualizarPilha() {
+  document.getElementById('visPilha').innerText = pilha.slice().reverse().join('\n');
+}
+
+// ===== FILA =====
+let fila = [];
+let maxFila = 0;
+
+function criarFila() {
+  maxFila = Number(document.getElementById('tamFila').value);
+  fila = [];
+  document.getElementById('visFila').innerText = '';
+  document.getElementById('msgFila').innerText = 'Fila criada com tamanho ' + maxFila;
+  mostrarCodigo('codeFila', `maxFila = ${maxFila};\nfila = [];`);
+}
+
+function enqueue() {
+  if (fila.length >= maxFila) {
+    document.getElementById('msgFila').innerText = 'Fila cheia';
+    mostrarCodigo('codeFila', 'if (fila.length >= maxFila)');
+    return;
   }
+  const valor = document.getElementById('valFila').value;
+  if (!valor) return;
+  fila.push(valor);
+  atualizarFila();
+  mostrarCodigo('codeFila', 'fila.push(valor);');
 }
 
-function dequeueFila() {
+function dequeue() {
+  if (fila.length === 0) {
+    document.getElementById('msgFila').innerText = 'Fila vazia';
+    mostrarCodigo('codeFila', 'if (fila.length === 0)');
+    return;
+  }
   fila.shift();
   atualizarFila();
+  mostrarCodigo('codeFila', 'fila.shift();');
+}
+
+function exibirFila() {
+  document.getElementById('msgFila').innerText = 'Fila: [ ' + fila.join(', ') + ' ]';
+  mostrarCodigo('codeFila', 'console.log(fila);');
+}
+
+function resetFila() {
+  fila = [];
+  atualizarFila();
+  document.getElementById('msgFila').innerText = 'Fila reiniciada';
+  mostrarCodigo('codeFila', 'fila = [];');
+}
+
+function atualizarFila() {
+  document.getElementById('visFila').innerText = fila.join('\n');
 }
