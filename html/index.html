@@ -7,30 +7,64 @@
 </head>
 <body>
 
-  <h1>Estruturas de Dados</h1>
+<h1>Estruturas de Dados</h1>
+<p class="descricao">Pilha (LIFO) e Fila (FIFO)</p>
 
-  <div class="container">
+<div class="container">
 
-    <!-- PILHA -->
-    <div class="box">
-      <h2>Pilha</h2>
-      <input id="valorPilha" type="text" placeholder="Valor">
-      <button onclick="pushPilha()">Empilhar</button>
-      <button onclick="popPilha()">Desempilhar</button>
-      <div id="pilha" class="estrutura"></div>
+  <!-- PILHA -->
+  <div class="card">
+    <h2>Pilha</h2>
+
+    <div class="linha">
+      <input type="number" id="tamPilha" placeholder="Tamanho máximo">
+      <button onclick="criarPilha()">Criar</button>
     </div>
 
-    <!-- FILA -->
-    <div class="box">
-      <h2>Fila</h2>
-      <input id="valorFila" type="text" placeholder="Valor">
-      <button onclick="enqueueFila()">Adicionar</button>
-      <button onclick="dequeueFila()">Remover</button>
-      <div id="fila" class="estrutura"></div>
+    <div class="linha">
+      <input type="text" id="valPilha" placeholder="Valor">
     </div>
 
+    <div class="acoes">
+      <button onclick="push()">Inserir</button>
+      <button onclick="pop()">Remover</button>
+      <button onclick="exibirPilha()">Exibir</button>
+      <button onclick="resetPilha()">Reiniciar</button>
+    </div>
+
+    <div id="msgPilha" class="msg"></div>
+    <div id="visPilha" class="visual"></div>
+
+    <pre id="codePilha" class="codigo"></pre>
   </div>
 
-  <script src="script.js"></script>
+  <!-- FILA -->
+  <div class="card">
+    <h2>Fila</h2>
+
+    <div class="linha">
+      <input type="number" id="tamFila" placeholder="Tamanho máximo">
+      <button onclick="criarFila()">Criar</button>
+    </div>
+
+    <div class="linha">
+      <input type="text" id="valFila" placeholder="Valor">
+    </div>
+
+    <div class="acoes">
+      <button onclick="enqueue()">Inserir</button>
+      <button onclick="dequeue()">Remover</button>
+      <button onclick="exibirFila()">Exibir</button>
+      <button onclick="resetFila()">Reiniciar</button>
+    </div>
+
+    <div id="msgFila" class="msg"></div>
+    <div id="visFila" class="visual"></div>
+
+    <pre id="codeFila" class="codigo"></pre>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
