@@ -5,7 +5,9 @@
   <title>Pilha e Fila</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="escuro">
+
+<button class="tema-btn" onclick="trocarTema()">🌓</button>
 
 <h1>Estruturas de Dados</h1>
 <p class="descricao">Pilha (LIFO) e Fila (FIFO)</p>
@@ -14,6 +16,9 @@
 
   <div class="card">
     <h2>Pilha</h2>
+    <p class="explicacao">
+      A pilha segue a regra LIFO, onde o último elemento inserido é o primeiro a ser removido.
+    </p>
 
     <div class="linha">
       <input type="number" id="tamPilha" placeholder="Tamanho máximo">
@@ -33,12 +38,14 @@
 
     <div id="msgPilha" class="msg"></div>
     <div id="visPilha" class="visual"></div>
-
     <pre id="codePilha" class="codigo"></pre>
   </div>
 
   <div class="card">
     <h2>Fila</h2>
+    <p class="explicacao">
+      A fila segue a regra FIFO, onde o primeiro elemento inserido é o primeiro a ser removido.
+    </p>
 
     <div class="linha">
       <input type="number" id="tamFila" placeholder="Tamanho máximo">
@@ -58,7 +65,6 @@
 
     <div id="msgFila" class="msg"></div>
     <div id="visFila" class="visual"></div>
-
     <pre id="codeFila" class="codigo"></pre>
   </div>
 
