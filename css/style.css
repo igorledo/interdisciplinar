@@ -1,8 +1,20 @@
 body {
   font-family: Arial, sans-serif;
-  background: #000;
-  color: #e5e7eb;
+  background: #000000;
+  color: #ffffff;
   padding: 20px;
+}
+
+.tema-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: #374151;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
 }
 
 h1 {
@@ -12,8 +24,16 @@ h1 {
 .descricao {
   text-align: center;
   font-size: 14px;
-  color: #9ca3af;
+  color: #d1d5db;
   margin-bottom: 20px;
+}
+
+.explicacao {
+  font-size: 14px;
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  color: #e5e7eb;
 }
 
 .container {
@@ -42,20 +62,16 @@ input {
   border-radius: 6px;
   border: 1px solid #374151;
   background: #020617;
-  color: #e5e7eb;
+  color: #ffffff;
 }
 
 button {
   background: #374151;
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 6px;
   padding: 7px 10px;
   cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.9;
 }
 
 .acoes {
@@ -75,7 +91,6 @@ button:hover {
 
 .msg {
   font-size: 13px;
-  color: #fbbf24;
 }
 
 .codigo {
@@ -85,7 +100,6 @@ button:hover {
   padding: 8px;
   font-family: monospace;
   font-size: 13px;
-  color: #93c5fd;
 }
 
 .linha-pilha {
@@ -113,7 +127,6 @@ button:hover {
 .topo-inline {
   color: #22c55e;
   font-weight: bold;
-  margin-left: 6px;
 }
 
 #visFila {
@@ -146,4 +159,34 @@ button:hover {
   margin-top: 4px;
   font-size: 11px;
   color: #9ca3af;
+}
+
+/* ===== TEMA CLARO ===== */
+body.claro {
+  background: #f3f4f6;
+  color: #000000;
+}
+
+body.claro .card,
+body.claro .visual,
+body.claro .codigo {
+  background: #ffffff;
+  border-color: #d1d5db;
+}
+
+body.claro input {
+  background: #ffffff;
+  color: #000000;
+  border-color: #d1d5db;
+}
+
+body.claro button,
+body.claro .tema-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+body.claro .descricao,
+body.claro .explicacao {
+  color: #111827;
 }
